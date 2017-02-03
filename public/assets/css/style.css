@@ -3,6 +3,11 @@ body {
   height: 900px;
   background-color: #ffcc66;
 }
+
+h1{
+  font-family: 'Pacifico', cursive;
+  font-size: 75px;
+}
 #top-bar {
 	margin-top: 28px;
 }
