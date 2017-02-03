@@ -13,7 +13,9 @@
     "express": "^4.13.3",
     "express-handlebars": "^2.0.1",
     "method-override": "^2.3.5",
-    "mysql": "^2.10.2"
+    "mysql": "^2.10.2",
+    "passport": "^0.3.2",
+    "sequelize": "^3.30.1"
   },
   "devDependencies": {
     "handlebars-helper-css": "^0.1.0"
