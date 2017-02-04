@@ -1,11 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define("User", {
-    // Giving the User model an id of type INTEGER
-    id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      primaryKey: true
-    },
+    
     // Giving the User model a username of type STRING
     name: {
       type: DataTypes.STRING
@@ -32,7 +27,7 @@ module.exports = function(sequelize, DataTypes) {
         associate: function(models) {
           // Associating User with bids
           // When an User is deleted, also delete any associated items and bids
-          User.hasMany(models.Item, {
+          User.belongsToMany(models.Item, {
             onDelete: "cascade"
           });
         }
