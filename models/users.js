@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     // Giving the User model a name of type STRING
     name: {
-      DataTypes.STRING
+      type: DataTypes.STRING
     }
   },
     // Here we'll pass a second "classMethods" object into the define method

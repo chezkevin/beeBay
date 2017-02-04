@@ -18,29 +18,30 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING
     },
     starting_bid: {
-      DataTypes.FLOAT
+      type: DataTypes.DECIMAL(10,2)
     },
     highest_bid: {
-      type: DataTypes.FLOAT
+      type: DataTypes.DECIMAL(10,2)
     },
     highest_bid_owner: {
       type: DataTypes.STRING
     }
-  },
-    // Here we'll pass a second "classMethods" object into the define method
-    // This is for any additional configuration we want to give our models
-    {
-      // We're saying that we want our Item to have an Owner
-      classMethods: {
-        associate: function(models) {
-          // Associating Item with an Owner
-          // When an Owner is deleted, also delete any associated Posts
-          Item.BelongsTo(models.Owner, {
-            onDelete: "cascade"
-          });
-        }
-      }
-    }
+  }
+  // ,
+  //   // Here we'll pass a second "classMethods" object into the define method
+  //   // This is for any additional configuration we want to give our models
+  //   {
+  //     // We're saying that we want our Item to have an Owner
+  //     classMethods: {
+  //       associate: function(models) {
+  //         // Associating Item with an Owner
+  //         // When an Owner is deleted, also delete any associated Posts
+  //         Item.BelongsTo(models.Owner, {
+  //           onDelete: "cascade"
+  //         });
+  //       }
+  //     }
+  //   }
   );
   return Item;
 };
