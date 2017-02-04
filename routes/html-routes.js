@@ -18,6 +18,10 @@ module.exports = function(app) {
 
   // after the user logs in, serve 
   app.get("/:username", function(req, res){
-    res.sendFile(path.join(__dirname + "/../public/"))
+    res.sendFile(path.join(__dirname + "/../public/user.html"));
   });
-}
+  // 
+  app.get("/:username", function(req, res){
+    res.sendFile(path.join(__dirname + "/../public/login.html"));
+  });
+};
