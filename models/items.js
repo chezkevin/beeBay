@@ -1,10 +1,10 @@
 module.exports = function(sequelize, DataTypes) {
   var Item = sequelize.define("Item", {
-    id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      primaryKey: true
-    },
+    // id: {
+    //   type: DataTypes.INTEGER,
+    //   autoIncrement: true,
+    //   primaryKey: true
+    // },
     // Giving the Item model a name of type STRING
     item_name: {
       type: DataTypes.STRING,
@@ -26,7 +26,8 @@ module.exports = function(sequelize, DataTypes) {
     highest_bid_owner: {
       type: DataTypes.STRING
     }
-  },
+  }
+  ,
     // Here we'll pass a second "classMethods" object into the define method
     // This is for any additional configuration we want to give our models
     {
@@ -35,7 +36,9 @@ module.exports = function(sequelize, DataTypes) {
         associate: function(models) {
           // Associating Item with an Owner
           // When an Owner is deleted, also delete any associated Posts
-          Item.belongsToMany(models.User, {});
+          Item.belongsToMany(models.User, {
+            through: "UserBids"
+          });
         }
       }
     }

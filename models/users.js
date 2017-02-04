@@ -23,7 +23,8 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING
     }
 
-  },
+  }
+  ,
     // Here we'll pass a second "classMethods" object into the define method
     // This is for any additional configuration we want to give our models
     {
@@ -33,7 +34,8 @@ module.exports = function(sequelize, DataTypes) {
           // Associating User with bids
           // When an User is deleted, also delete any associated items and bids
           User.belongsToMany(models.Item, {
-            onDelete: "cascade"
+            //onDelete: "cascade",
+            through: "UserBids"
           });
         }
       }
