@@ -14,17 +14,27 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
+    image_url_thumbnail: {
+      type: DataTypes.STRING
+    },
     owner: {
       type: DataTypes.STRING
     },
+    description: {
+      type: DataTypes.TEXT
+    },
     starting_bid: {
-      type: DataTypes.DECIMAL(10,2)
+      type: DataTypes.DECIMAL(10,2),
+      default: .01
     },
     highest_bid: {
       type: DataTypes.DECIMAL(10,2)
     },
     highest_bid_owner: {
       type: DataTypes.STRING
+    },
+    end_time: {
+      type: DataTypes.DATE
     }
   }
   ,

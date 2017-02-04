@@ -1,7 +1,11 @@
 {
   "development": {
     "username": "root",
-    "password": "Chan312zeke!",
+<<<<<<< HEAD
+    "password": "mgof5562",
+=======
+    "password": "Suicytwo2!",
+>>>>>>> fa26764d8a90819557cdd000d43d94e105a6de91
     "database": "beebay_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
