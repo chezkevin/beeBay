@@ -30,8 +30,3 @@ request(url, function (error, response, body) {
      }
   else{console.log(error)}
 });
-
-//
-// function callback(root) {
-//    console.log(root);
-// }
