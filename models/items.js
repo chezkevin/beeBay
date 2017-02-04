@@ -26,6 +26,15 @@ module.exports = function(sequelize, DataTypes) {
     description: {
       type: DataTypes.TEXT
     },
+    category: {
+      type: DataTypes.TEXT
+    },
+    current_price: {
+      type: DataTypes.DECIMAL(10,2)
+    },
+    condition: {
+      type: DataTypes.TEXT
+    },
     starting_bid: {
       type: DataTypes.DECIMAL(10,2),
       default: .01
