@@ -1,6 +1,4 @@
-var inquirer = require("inquirer");
 var request = require('request');
-var open = require("open");
 var db = require("./models");
 
 var url = "http://svcs.ebay.com/services/search/FindingService/v1"
