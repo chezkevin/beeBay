@@ -8,6 +8,16 @@ h1{
   font-family: 'Pacifico', cursive;
   font-size: 75px;
 }
+
+#bee_logo {
+  max-height: 150px;
+  max-width: 150px;
+}
+#beehive {
+  max-height: 120px;
+  max-width: 120px;
+  float: right;
+}
 #top-bar {
 	margin-top: 28px;
 }
