@@ -14,10 +14,15 @@ module.exports = function(sequelize, DataTypes) {
     password: {
       type: DataTypes.STRING
     },
-    // Giving the User Model a password of type INTEGER
+    // Showing the User's items bidding history
     itemBids: {
       type: DataTypes.INTEGER
+    },
+    // Shows the User's receivable items won from their bids
+    itemsWon: {
+      type: DataTypes.STRING
     }
+
   },
     // Here we'll pass a second "classMethods" object into the define method
     // This is for any additional configuration we want to give our models
