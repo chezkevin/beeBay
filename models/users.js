@@ -1,13 +1,22 @@
 module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define("User", {
+    // Giving the User model an id of type INTEGER
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true
     },
-    // Giving the User model a name of type STRING
+    // Giving the User model a username of type STRING
     name: {
       type: DataTypes.STRING
+    },
+    // Giving the User Model a password of type STRING
+    password: {
+      type: DataTypes.STRING
+    },
+    // Giving the User Model a password of type INTEGER
+    itemBids: {
+      type: DataTypes.INTEGER
     }
   },
     // Here we'll pass a second "classMethods" object into the define method
@@ -16,8 +25,8 @@ module.exports = function(sequelize, DataTypes) {
       // We're saying that we want our User to have Items
       classMethods: {
         associate: function(models) {
-          // Associating Author with Posts
-          // When an Author is deleted, also delete any associated Posts
+          // Associating User with bids
+          // When an User is deleted, also delete any associated items and bids
           User.hasMany(models.Item, {
             onDelete: "cascade"
           });
