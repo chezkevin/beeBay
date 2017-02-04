@@ -20,6 +20,9 @@ module.exports = function(sequelize, DataTypes) {
     owner: {
       type: DataTypes.STRING
     },
+    description: {
+      type: DataTypes.TEXT
+    },
     starting_bid: {
       type: DataTypes.DECIMAL(10,2),
       default: .01
@@ -29,6 +32,9 @@ module.exports = function(sequelize, DataTypes) {
     },
     highest_bid_owner: {
       type: DataTypes.STRING
+    },
+    end_time: {
+      type: DataTypes.DATE
     }
   }
   ,
