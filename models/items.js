@@ -20,6 +20,9 @@ module.exports = function(sequelize, DataTypes) {
     owner: {
       type: DataTypes.STRING
     },
+    condition: {
+      type: DataTypes.STRING
+    },
     description: {
       type: DataTypes.TEXT
     },

@@ -20,11 +20,12 @@ request(url, function (error, response, body) {
         item_name: ebayJSON.item[i].title[0],
         image_url: ebayJSON.item[i].viewItemURL[0],
         image_url_thumbnail: ebayJSON.item[i].galleryURL[0],
+        condition: ebayJSON.item[i].condition[0].conditionDisplayName[0],
         end_time: ebayJSON.item[i].listingInfo[0].endTime[0],
         category: ebayJSON.item[i].primaryCategory[0].categoryName[0],
-        current_price: ebayJSON.item[i].sellingStatus[0].currentPrice[0].__value__,
-        condition: ebayJSON.item[i].condition[0].conditionDisplayName[0]
+        current_price: ebayJSON.item[i].sellingStatus[0].currentPrice[0].__value__
       })
+      // console.log(ebayJSON.item[i].condition[0].conditionDisplayName[0])
     }
 
      }
