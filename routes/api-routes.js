@@ -11,6 +11,13 @@ var db = require("../models");
 // Routes
 // =============================================================
 module.exports = function(app) {
+
+  app.get("/api/items", function(req,res){
+    db.Item.findAll({}).then(function(dbItems){
+      res.json(dbItems);
+    })
+  });
+
   app.get("/api/user", function(req, res) {
   	db.User.findAll({
   	  include: [db.User]
