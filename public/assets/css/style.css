@@ -100,3 +100,7 @@ p.item-current-price{
   font-weight:bold;}
 p.item-end-time{font-style: italic;}
 .bids-panel-header{padding-left:15px;}
+p {margin: 5px 0 5px;}
+.bid-btn{
+  padding: 3px 12px;
+  border-radius: 0px;}

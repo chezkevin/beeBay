@@ -54,6 +54,9 @@ $(document).ready(function() {
     var itemCat = $("<p>");
     var itemCurrentPrice = $("<p>");
     var itemEndTime = $("<p>");
+    var bidContainer = $("<div>")
+    var bidInput = $("<input>");
+    var bidBtn = $("<button>");
 
     // add classes to item span
     itemSpan.addClass("item-details");
@@ -61,6 +64,10 @@ $(document).ready(function() {
     itemCat.addClass("item-cat");
     itemCurrentPrice.addClass("item-current-price");
     itemEndTime.addClass("item-end-time");
+    bidContainer.addClass("bid-container")
+    bidInput.addClass("bidder");
+    bidBtn.addClass("bid-btn");
+    bidBtn.addClass("btn btn-success");
 
     // populate item content
     itemLink.attr('href', '/item/' + item.id);
@@ -69,10 +76,16 @@ $(document).ready(function() {
     itemCurrentPrice.text("Current bid: " + item.current_price);
     itemEndTime.text("End time: " + item.end_time);
     itemLink.append(itemH3);
+    bidBtn.attr('type', 'submit');
+    bidBtn.text("Bid now")
+
+    bidContainer.append(bidInput)
+                .append(bidBtn);
 
     itemSpan.append(itemLink)
             .append(itemCat)
             .append(itemCurrentPrice)
+            .append(bidContainer)
             .append(itemEndTime);
 
     // add item content to panel
