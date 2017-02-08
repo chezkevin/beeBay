@@ -18,7 +18,7 @@ module.exports = function(app) {
     })
   });
 
-  app.get("api/item/:itemId", function(req,res){
+  app.get("api/items/:itemId", function(req,res){
     db.Item.findOne({
       where: {
         id: req.params.id
