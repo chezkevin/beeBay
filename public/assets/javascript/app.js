@@ -2,7 +2,7 @@ $(document).ready(function() {
   // Getting jQuery references to the item div
   //var itemContainer = $(".item-container");
   //var panel = $(".panel.panel-default");
-  var panelBody = $(".panel-body");
+  var panelBody = $(".panel-body.items");
   var items;
 
   // get and display list of items.
