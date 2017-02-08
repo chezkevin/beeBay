@@ -28,7 +28,6 @@ request(url, function (error, response, body) {
         condition: ebayJSON.item[i].condition[0].conditionDisplayName[0] || null
       })
     }
-
      }
   else{console.log(error)}
 });
