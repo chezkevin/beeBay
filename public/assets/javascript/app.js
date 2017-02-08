@@ -3,10 +3,16 @@ $(document).ready(function() {
   //var itemContainer = $(".item-container");
   //var panel = $(".panel.panel-default");
   var panelBody = $(".panel-body.items");
+  var buttonClass = $("button.bid-btn.btn.btn-success");
   var items;
 
   // get and display list of items.
   getItems("");
+
+  // event listener for bidding from the item list page
+  $("button").on('click', buttonClass, function() {
+    alert("clicked! id: ");
+  });
 
   // this function makes an api call and stores the data in the items array
   // then, calls initializePanels to display the items
@@ -77,6 +83,7 @@ $(document).ready(function() {
     itemEndTime.text("End time: " + item.end_time);
     itemLink.append(itemH3);
     bidBtn.attr('type', 'submit');
+    bidBtn.attr('href', '/item/bid/' + item.id);
     bidBtn.text("Bid now")
 
     bidContainer.append(bidInput)
