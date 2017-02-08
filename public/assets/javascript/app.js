@@ -37,7 +37,7 @@
         initializePanels();
       }
     });
-  };
+  }
 
   // this function initializes the item panels
   // calls a panel function and appends to panel body
@@ -48,7 +48,7 @@
       itemsToAdd.push(createNewPanel(items[i]));
     }
     panelBody.append(itemsToAdd);
-  };
+  }
 
   // this function creates the html of an item in a panel
   function createNewPanel(item){
@@ -66,7 +66,7 @@
     var itemCat = $("<p>");
     var itemCurrentPrice = $("<p>");
     var itemEndTime = $("<p>");
-    var bidContainer = $("<div>")
+    var bidContainer = $("<div>");
     var bidInput = $("<input>");
     var bidBtn = $("<button>");
 
@@ -76,7 +76,7 @@
     itemCat.addClass("item-cat");
     itemCurrentPrice.addClass("item-current-price");
     itemEndTime.addClass("item-end-time");
-    bidContainer.addClass("bid-container")
+    bidContainer.addClass("bid-container");
     bidInput.addClass("bidder");
     bidBtn.addClass("bid-btn");
     bidBtn.addClass("btn btn-success");
@@ -90,7 +90,7 @@
     itemLink.append(itemH3);
     bidBtn.attr('type', 'submit');
     bidBtn.attr('href', '/item/bid/' + item.id);
-    bidBtn.text("Bid now")
+    bidBtn.text("Bid now");
 
     bidContainer.append(bidInput)
                 .append(bidBtn);
@@ -107,7 +107,7 @@
 
     // return the panel to initializePanels function
     return newPanel;
-  };
+  }
 
   // This function displays a messgae when there are no items
   function displayEmpty(id) {
