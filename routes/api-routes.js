@@ -12,13 +12,13 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
-  app.get("/api/item", function(req,res){
+  app.get("/api/items", function(req,res){
     db.Item.findAll({}).then(function(dbItems){
       res.json(dbItems);
     })
   });
 
-  app.get("api/item/:itemId", function(req,res){
+  app.get("api/items/:itemId", function(req,res){
     db.Item.findOne({
       where: {
         id: req.params.id
