@@ -18,6 +18,17 @@ module.exports = function(app) {
     })
   });
 
+  app.get("api/items/:itemId", function(req,res){
+    db.Item.findOne({
+      where: {
+        id: req.params.id
+      },
+      include: [db.User]
+    }).then(function(dbItem) {
+      res.json(dbItem);
+    });
+  });
+
   app.get("/api/user", function(req, res) {
   	db.User.findAll({
   	  include: [db.User]

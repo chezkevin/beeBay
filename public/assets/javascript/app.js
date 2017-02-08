@@ -5,6 +5,7 @@ $(document).ready(function() {
   var panelBody = $(".panel-body");
   var items;
 
+  // get and display list of items.
   getItems("");
 
   // this function makes an api call and stores the data in the items array
