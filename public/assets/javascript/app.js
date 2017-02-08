@@ -1,18 +1,24 @@
-$(document).ready(function() {
+
   // Getting jQuery references to the item div
   //var itemContainer = $(".item-container");
   //var panel = $(".panel.panel-default");
   var panelBody = $(".panel-body.items");
-  var buttonClass = $("button.bid-btn.btn.btn-success");
+  var buttonClass = ".bid-btn.btn.btn-success";
   var items;
 
   // get and display list of items.
   getItems("");
 
   // event listener for bidding from the item list page
-  $("button").on('click', buttonClass, function() {
-    alert("clicked! id: ");
-  });
+
+  $(document).on('click', 'button', function (e) {
+    var newBid = Number($(this).prev().val());
+    if (isNaN(newBid)){
+      alert("Please enter a number.");
+    }else{
+    alert("Put in a bid for " + newBid + "!");
+    }
+});
 
   // this function makes an api call and stores the data in the items array
   // then, calls initializePanels to display the items
@@ -22,7 +28,7 @@ $(document).ready(function() {
       itemId = "/?itemId=" + itemId;
     }
     $.get("/api/items" + itemId, function(data) {
-      console.log("Items", data);
+      //console.log("Items", data);
       items = data;
       if (!items || !items.length) {
         displayEmpty(item);
@@ -117,4 +123,3 @@ $(document).ready(function() {
     "'>here</a> in order to get started.");
     panelBody.append(messageh2);
   }
-});
