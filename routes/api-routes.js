@@ -12,7 +12,7 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
-  app.get("/api/item", function(req,res){
+  app.get("/api/items", function(req,res){
     db.Item.findAll({}).then(function(dbItems){
       res.json(dbItems);
     })
