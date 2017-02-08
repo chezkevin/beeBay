@@ -16,13 +16,21 @@
 <body>
     <div class="container">
         <h1>BeeBay
-       <img src="assets/images/bee_logo.png"; id="bee_logo">  
+       <img src="assets/images/bee_logo.png"; id="bee_logo">
        <img src="assets/images/beehive.png"; id="beehive"> </h1>
-        <div class="row">
-        </div>
-        <div>
+       <div class="row">
+         <div class="form-group">
+           <form action="/" class="form" style="text-align: center">
+                  <br>
+                  <div class="col-xs-6">
+                    <input placeholder="Search..." id="search-name" ; style="height: 40px"></textarea>
+                    <button type="submit" class="btn btn-success"> Search</button>
+                  </div>
+           </form>
+          </div>
         </div>
 
+<<<<<<< HEAD
        <form action="/" class="form" style="padding: 0px 0px 0px 40px">
             <div class="form-group">
                 <br>
@@ -49,16 +57,35 @@
             <form id="cms">
             <ul>
               <div class="col-md-12 eaten-burger-container">
+=======
+        <div class="row">
+          <div class="col-md-9 item-container">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <!-- this div contains item details for one specific item.
+                    details are iteratively created in ./javascript/app.js
+                      An example is given below
+                  <img class="item-img-thumb" src ="http://thumbs2.ebaystatic.com/m/mFMs2_ewDEaKWMCHFqf_5Ug/140.jpg" />
+                  <span class="item-details">
+                    <a href="/item/1">
+                      <h3 class="item-header">Bee Products for Better Health by C. Leigh Broadhurst Paperback Book (English)</h3>
+                    </a>
+                    <p class="item-desc">Description</p>
+                    <p class="item-current-price">Current price: 10.82</p>
+                    <input placeholder="" id="item=bid" ; style="height: 40px"></textarea>
+                    <button type="submit" class="btn btn-success">Enter bid</button>
+                  </span>
+                -->
+>>>>>>> 1fd1ce4b7ef519e655c62e2088e23f946c953c42
               </div>
-            </ul>
-          </form>
+            </div>
+          </div>
         </div>
-      </div>
 
+    </div>
 
-  <!-- Custom Script -->
-	<script src="./assets/js/cms.js" type="text/javascript"></script>
-  <script src="./assets/js/burger-view.js" type="text/javascript"></script>
+  <!-- Custom Script
+	<script src="./assets/js/cms.js" type="text/javascript"></script>-->
    <!--link to javascript -->
   <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>

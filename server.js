@@ -6,6 +6,7 @@
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
+require("./seeder.js");
 
 // Sets up the Express App
 // =============================================================
