@@ -99,3 +99,4 @@ p.item-current-price{
   font-size: 20px;
   font-weight:bold;}
 p.item-end-time{font-style: italic;}
+.bids-panel-header{padding-left:15px;}
