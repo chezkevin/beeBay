@@ -15,7 +15,6 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname + "/../public/index.html"));
   });
-
   // after the user logs in, serve user's unique profile
   app.get("/:username", function(req, res){
     res.sendFile(path.join(__dirname + "/../public/user.html"));
