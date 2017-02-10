@@ -12,6 +12,7 @@
     "body-parser": "^1.14.2",
     "express": "^4.13.3",
     "express-handlebars": "^2.0.1",
+    "google-images": "^2.0.0",
     "inquirer": "^3.0.1",
     "method-override": "^2.3.5",
     "mysql": "^2.10.2",

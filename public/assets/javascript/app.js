@@ -51,27 +51,27 @@ $(document).ready(function() {
     var itemSpan = $("<span>");
     var itemLink = $("<a>");
     var itemH3 = $("<h3>");
-    var itemDesc = $("<p>");
+    var itemCat = $("<p>");
     var itemCurrentPrice = $("<p>");
     var itemEndTime = $("<p>");
 
     // add classes to item span
     itemSpan.addClass("item-details");
     itemH3.addClass("item-header");
-    itemDesc.addClass("item-desc");
+    itemCat.addClass("item-cat");
     itemCurrentPrice.addClass("item-current-price");
     itemEndTime.addClass("item-end-time");
 
     // populate item content
     itemLink.attr('href', '/item/' + item.id);
     itemH3.text(item.item_name);
-    itemDesc.text(item.description);
+    itemCat.text(item.category);
     itemCurrentPrice.text("Current bid: " + item.current_price);
     itemEndTime.text("End time: " + item.end_time);
     itemLink.append(itemH3);
 
     itemSpan.append(itemLink)
-            .append(itemDesc)
+            .append(itemCat)
             .append(itemCurrentPrice)
             .append(itemEndTime);
 
