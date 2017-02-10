@@ -29,6 +29,7 @@ module.exports = function(app) {
     });
   });
 
+<<<<<<< HEAD
   app.put("/api/items/bid/:itemId", function(req,res){
     db.Item.update({
       current_price: req.body.data.bid},
@@ -41,6 +42,30 @@ module.exports = function(app) {
         res.json(dbItem);
       });
     });
+=======
+  app.get("/views/item/:id", function(req, res){
+
+db.Item.find({ 
+  where: { 
+    item_id: req.params.id 
+    } 
+  }).on('success', function (result) {
+    
+    if (result) {
+
+      var currentViews = result.views;
+
+      result.updateAttributes({
+        views: currentViews++
+      })
+      .success(function () {
+
+      res.json(this);
+      });
+    }
+  });
+});
+>>>>>>> 6d2ca7bf07ebb4af3e1b18dc99e745675a54bbcb
 
   app.get("/api/user", function(req, res) {
   	db.User.findAll({
