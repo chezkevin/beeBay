@@ -15,7 +15,7 @@ module.exports = function(app) {
   app.get("/api/items", function(req,res){
     db.Item.findAll({}).then(function(dbItems){
       res.json(dbItems);
-    })
+    });
   });
 
   app.get("api/items/:itemId", function(req,res){

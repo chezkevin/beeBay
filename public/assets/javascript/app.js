@@ -1,12 +1,24 @@
-$(document).ready(function() {
+
   // Getting jQuery references to the item div
   //var itemContainer = $(".item-container");
   //var panel = $(".panel.panel-default");
-  var panelBody = $(".panel-body");
+  var panelBody = $(".panel-body.items");
+  var buttonClass = ".bid-btn.btn.btn-success";
   var items;
 
   // get and display list of items.
   getItems("");
+
+  // event listener for bidding from the item list page
+
+  $(document).on('click', 'button', function (e) {
+    var newBid = Number($(this).prev().val());
+    if (isNaN(newBid)){
+      alert("Please enter a number.");
+    }else{
+    alert("Put in a bid for " + newBid + "!");
+    }
+});
 
   // this function makes an api call and stores the data in the items array
   // then, calls initializePanels to display the items
@@ -16,7 +28,7 @@ $(document).ready(function() {
       itemId = "/?itemId=" + itemId;
     }
     $.get("/api/items" + itemId, function(data) {
-      console.log("Items", data);
+      //console.log("Items", data);
       items = data;
       if (!items || !items.length) {
         displayEmpty(item);
@@ -25,7 +37,7 @@ $(document).ready(function() {
         initializePanels();
       }
     });
-  };
+  }
 
   // this function initializes the item panels
   // calls a panel function and appends to panel body
@@ -36,7 +48,7 @@ $(document).ready(function() {
       itemsToAdd.push(createNewPanel(items[i]));
     }
     panelBody.append(itemsToAdd);
-  };
+  }
 
   // this function creates the html of an item in a panel
   function createNewPanel(item){
@@ -54,6 +66,9 @@ $(document).ready(function() {
     var itemCat = $("<p>");
     var itemCurrentPrice = $("<p>");
     var itemEndTime = $("<p>");
+    var bidContainer = $("<div>");
+    var bidInput = $("<input>");
+    var bidBtn = $("<button>");
 
     // add classes to item span
     itemSpan.addClass("item-details");
@@ -61,6 +76,10 @@ $(document).ready(function() {
     itemCat.addClass("item-cat");
     itemCurrentPrice.addClass("item-current-price");
     itemEndTime.addClass("item-end-time");
+    bidContainer.addClass("bid-container");
+    bidInput.addClass("bidder");
+    bidBtn.addClass("bid-btn");
+    bidBtn.addClass("btn btn-success");
 
     // populate item content
     itemLink.attr('href', '/item/' + item.id);
@@ -69,10 +88,17 @@ $(document).ready(function() {
     itemCurrentPrice.text("Current bid: " + item.current_price);
     itemEndTime.text("End time: " + item.end_time);
     itemLink.append(itemH3);
+    bidBtn.attr('type', 'submit');
+    bidBtn.attr('href', '/item/bid/' + item.id);
+    bidBtn.text("Bid now");
+
+    bidContainer.append(bidInput)
+                .append(bidBtn);
 
     itemSpan.append(itemLink)
             .append(itemCat)
             .append(itemCurrentPrice)
+            .append(bidContainer)
             .append(itemEndTime);
 
     // add item content to panel
@@ -81,7 +107,7 @@ $(document).ready(function() {
 
     // return the panel to initializePanels function
     return newPanel;
-  };
+  }
 
   // This function displays a messgae when there are no items
   function displayEmpty(id) {
@@ -97,4 +123,3 @@ $(document).ready(function() {
     "'>here</a> in order to get started.");
     panelBody.append(messageh2);
   }
-});

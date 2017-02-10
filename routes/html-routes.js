@@ -15,13 +15,16 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname + "/../public/index.html"));
   });
-
-  // after the user logs in, serve 
-  app.get("/:username", function(req, res){
+  // after the user logs in, serve user's unique profile
+  app.get("/:userId", function(req, res){
     res.sendFile(path.join(__dirname + "/../public/user.html"));
   });
-  // 
-  app.get("/:username", function(req, res){
+  // shows page that requires the user to login or register
+  app.get("/:loginId", function(req, res){
     res.sendFile(path.join(__dirname + "/../public/login.html"));
+  });
+  // shows all details of each individual item
+  app.get("/:itemId", function(req, res){
+    res.sendFile(path.join(__dirname + "/../public/item.html"));
   });
 };

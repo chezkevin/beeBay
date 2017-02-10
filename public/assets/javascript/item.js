@@ -16,4 +16,7 @@ $(document).ready(function(){
     $("#timeLeft").append("<h3>" + item.end_time + "</h2>");
 }
 
-  $.get("https://api.ebay.com/buy/browse/v1/item/v1" + item.item_id)
+  $.get("https://api.ebay.com/buy/browse/v1/item/v1" + item.item_id, function(data){
+
+    $("#description").append("<p>" + data.shortDescription + "</p>")
+  })
