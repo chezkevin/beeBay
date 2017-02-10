@@ -18,16 +18,29 @@ module.exports = function(app) {
     });
   });
 
-  app.get("api/items/:itemId", function(req,res){
+  app.get("/api/items/:itemId", function(req,res){
     db.Item.findOne({
       where: {
-        id: req.params.id
+        id: req.params.itemId
       },
       include: [db.User]
     }).then(function(dbItem) {
       res.json(dbItem);
     });
   });
+
+  app.put("/api/items/bid/:itemId", function(req,res){
+    db.Item.update({
+      current_price: req.body.data.bid},
+      {
+        where:
+        {
+          id: req.params.itemId
+        }
+      }).then(function(dbItem) {
+        res.json(dbItem);
+      });
+    });
 
   app.get("/api/user", function(req, res) {
   	db.User.findAll({
