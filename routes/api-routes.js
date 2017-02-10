@@ -29,15 +29,17 @@ module.exports = function(app) {
     });
   });
 
-  app.put("/api/items/bid/:itemId", function(req,res){
+  app.post("/api/items/bid/:itemId", function(req,res){
+    console.log("req.body: ",req.body);
     db.Item.update({
-      current_price: req.body.data.bid},
+      current_price: req.body.bid},
       {
         where:
         {
           id: req.params.itemId
         }
       }).then(function(dbItem) {
+        console.log(dbItem);
         res.json(dbItem);
       });
     });

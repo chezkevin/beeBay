@@ -11,7 +11,7 @@ getItems("");
 // event listener for bidding from the item list page
 
 $(document).on('click', 'button', function(e) {
-    var newBid = Number($(this).prev().val());
+    var newBid = parseFloat($(this).prev().val());
     var itemId = $(this).attr('id');
     if (isNaN(newBid)) {
         alert("Please enter a number.");
@@ -148,10 +148,11 @@ function makeBid(itemId, bid) {
 
     $.ajax({
         url: '/api/items/bid/' + itemId,
-        type: 'PUT',
-        data: data,
+        type: 'POST',
+        data: JSON.stringify(data),
         contentType: 'application/json',
         success: function(result) {
+            alert("Congrats! You are now the highest bidder.");
             window.location.href = "/";
         },
         error: function(request, msg, error) {
