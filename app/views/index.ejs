@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+<!--      <script src="/javascript/app.js"> </script> -->
+    <script src="js/lib/jquery.min.js"> </script>
+    <script src="js/lib/bootstrap.min.js"> </script>
+  </head>
+  <body>
+<% include ./layouts/header %>
+
+
+<div class="container-fluid page-wrap">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <h1 class="Title text-center"></h1>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 text-center">
+             <h1>BeeBay
+       <img src="/images/bee_logo.png"; id="bee_logo">
+       </h1>
+        <br>
+            <form name="signin" action="signin" method="post"99>
+            <input type="email" name="email" placeholder="Email address" class="form-control">
+            <input type="password" name="password" placeholder="Password" class="form-control">
+
+            <input type="submit" value="Sign in" class="btn btn-primary" style="width: 40%"> 
+            <br>  
+            <br>
+               
+        </form>
+            <a href="/signup"> 
+             <input type="submit" value="Sign Up" class="btn btn-danger" style="width: 40%">  
+             </a>  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+</body>
+</html>
+
+
+
