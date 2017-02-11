@@ -9,7 +9,6 @@ var items;
 getItems("");
 
 // event listener for bidding from the item list page
-
 $(document).on('click', 'button', function(e) {
     var newBid = parseFloat($(this).prev().val());
     var itemId = $(this).attr('id');
@@ -140,19 +139,18 @@ function checkBid(itemId, bid) {
     });
 }
 
+// uses a POST request to make the bid
 function makeBid(itemId, bid) {
-
     var data = {
         bid: bid
     };
-
     $.ajax({
         url: '/api/items/bid/' + itemId,
         type: 'POST',
         data: JSON.stringify(data),
         contentType: 'application/json',
         success: function(result) {
-            alert("Congrats! You are now the highest bidder.");
+            alert("Congrats! You are the highest bidder.");
             window.location.href = "/";
         },
         error: function(request, msg, error) {

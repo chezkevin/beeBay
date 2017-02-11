@@ -6,6 +6,9 @@ module.exports = function(sequelize, DataTypes) {
     //   primaryKey: true
     // },
     // Giving the Item model a name of type STRING
+    item_id: {
+      type: DataTypes.INTEGER
+    },
     item_name: {
       type: DataTypes.STRING,
       allowNull: false

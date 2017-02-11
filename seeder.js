@@ -10,7 +10,7 @@ url += "&GLOBAL-ID=EBAY-US";
 url += "&RESPONSE-DATA-FORMAT=JSON";
 url += "&REST-PAYLOAD";
 url += "&keywords=bee%20products"; //Keyword search
-url += "&paginationInput.entriesPerPage=19"; //number of products returned
+url += "&paginationInput.entriesPerPage=15"; //number of products returned
 
 request(url, function (error, response, body) {
   if (!error && response.statusCode == 200) {

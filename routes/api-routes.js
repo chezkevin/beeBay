@@ -12,12 +12,14 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
+  // get all the items from database and returnu them
   app.get("/api/items", function(req,res){
     db.Item.findAll({}).then(function(dbItems){
       res.json(dbItems);
     });
   });
 
+  // get one item from database and return
   app.get("/api/items/:itemId", function(req,res){
     db.Item.findOne({
       where: {
@@ -29,6 +31,7 @@ module.exports = function(app) {
     });
   });
 
+  // update one item with a high bid
   app.post("/api/items/bid/:itemId", function(req,res){
     console.log("req.body: ",req.body);
     db.Item.update({
@@ -68,7 +71,7 @@ db.Item.find({
 
   app.get("/api/user", function(req, res) {
   	db.User.findAll({
-  	  include: [db.User]
+  	  include: [db.Item]
   	}).then(function(dbUser) {
   	  res.json(dbUser);
   	});
