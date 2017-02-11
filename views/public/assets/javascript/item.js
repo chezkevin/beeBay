@@ -1,17 +1,28 @@
 $(document).ready(function(){
+  // find the item id by grabbing URL
   var pathArray = window.location.pathname.split( '/' );
-  console.log(pathArray);
   var newPathname;
   var item;
   var itemId = pathArray[3];
 
+  // event listener for bidding from the item list page
+  $(document).on('click', 'button', function(e) {
+      var newBid = parseFloat($(this).prev().val());
+      var itemId = $(this).attr('id');
+      if (isNaN(newBid)) {
+          alert("Please enter a number.");
+      } else {
+          checkBid(itemId, newBid);
+      }
+  });
+
+  // grab details about the item using api
   $.get("/api/items/" + itemId, function(data) {
-    console.log("itemId: " + itemId);
-    console.log("data: " + data);
     item = data;
     populateFields(item);
   })
 
+  // create html to send to item detail page
   function populateFields(item){
     // overall div for image panel and info panel
     var imgPanel = $("<div>");
@@ -52,7 +63,7 @@ $(document).ready(function(){
     image.append(imgPanel);
 
     bidContainer.append(bidInput)
-        .append(bidBtn);
+                .append(bidBtn);
 
     infoPanelBody.append(itemName)
                  .append(itemPrice)
@@ -66,4 +77,40 @@ $(document).ready(function(){
   //
   //   $("#description").append("<p>" + data.shortDescription + "</p>")
   // })
+
+  // checks that the user's bid was high enough to make a bid
+  function checkBid(itemId, bid) {
+      $.get("/api/items/" + itemId, function(data) {
+          var singleItem = data;
+          var itemPrice = singleItem.current_price;
+          if (bid < itemPrice) {
+              alert("Your bid did not go through! Please enter a bid higher than " + itemPrice);
+          } else {
+              makeBid(itemId, bid);
+          }
+      });
+  }
+
+  // uses a POST request to make the bid
+  function makeBid(itemId, bid) {
+      var data = {
+          bid: bid
+      };
+      $.ajax({
+          url: '/api/items/bid/' + itemId,
+          type: 'POST',
+          data: JSON.stringify(data),
+          contentType: 'application/json',
+          success: function(result) {
+              alert("Congrats! You are the highest bidder.");
+              window.location.href = "/main";
+          },
+          error: function(request, msg, error) {
+              // handle failure
+              console.log(request);
+              console.log(msg);
+              console.log(error);
+          }
+      });
+  }
 });
