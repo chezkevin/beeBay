@@ -29,6 +29,29 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/views/item/:id", function(req, res){
+
+db.Item.find({ 
+  where: { 
+    item_id: req.params.id 
+    } 
+  }).on('success', function (result) {
+    
+    if (result) {
+
+      var currentViews = result.views;
+
+      result.updateAttributes({
+        views: currentViews++
+      })
+      .success(function () {
+
+      res.json(this);
+      });
+    }
+  });
+});
+
   app.get("/api/user", function(req, res) {
   	db.User.findAll({
   	  include: [db.User]

@@ -10,6 +10,13 @@ module.exports = function(sequelize, DataTypes) {
     name: {
       type: DataTypes.STRING
     },
+    // Giving the User Model an email of type STRING
+    email: {
+      type: DataTypes.STRING
+    },
+    username: {
+      type:DataTypes.STRING
+    },
     // Giving the User Model a password of type STRING
     password: {
       type: DataTypes.STRING
