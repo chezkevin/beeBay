@@ -104,3 +104,8 @@ p {margin: 5px 0 5px;}
 .bid-btn{
   padding: 3px 12px;
   border-radius: 0px;}
+
+/*** home link ****/
+a#home-link:hover{
+  text-decoration: none;
+}

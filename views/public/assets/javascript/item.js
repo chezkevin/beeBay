@@ -37,7 +37,8 @@ $(document).ready(function(){
     itemName.html("<h2>" + item.item_name + "</h2>");
     itemPrice.html("<h3>" + item.current_price + "</h3>");
     itemTimeLeft.html("<h4>" + item.end_time + "</h4>");
-
+    bidContainer.addClass("bid-container");
+    bidInput.addClass("bidder");
     bidBtn.addClass("bid-btn");
     bidBtn.addClass("btn btn-success");
     bidBtn.attr('type', 'submit');
@@ -56,7 +57,7 @@ $(document).ready(function(){
     infoPanelBody.append(itemName)
                  .append(itemPrice)
                  .append(itemTimeLeft)
-                 .append(bidBtn);
+                 .append(bidContainer);
     infoPanel.append(infoPanelBody);
     itemInfo.append(infoPanel);
   }
