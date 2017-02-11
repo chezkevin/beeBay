@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
     // },
     // Giving the Item model a name of type STRING
     item_id: {
-      type: DataTypes.INTEGER
+      type: DataTypes.BIGINT
     },
     item_name: {
       type: DataTypes.STRING,

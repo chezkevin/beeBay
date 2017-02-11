@@ -151,7 +151,7 @@ function makeBid(itemId, bid) {
         contentType: 'application/json',
         success: function(result) {
             alert("Congrats! You are the highest bidder.");
-            window.location.href = "/";
+            window.location.href = "/main";
         },
         error: function(request, msg, error) {
             // handle failure

@@ -1,6 +1,6 @@
 var request = require('request');
 var db = require("../models");
-var moment = require("moment");
+//var moment = require("moment");
 
 // console.log(moment().format());
 
@@ -39,7 +39,6 @@ request(url, function (error, response, body) {
 
       });
     }
-
 }
   else{console.log(error);}
 
