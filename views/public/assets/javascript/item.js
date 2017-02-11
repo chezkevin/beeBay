@@ -13,11 +13,52 @@ $(document).ready(function(){
   })
 
   function populateFields(item){
+    // overall div for image panel and info panel
+    var imgPanel = $("<div>");
+    imgPanel.addClass("panel panel-default");
+    var imgPanelBody = $("<div>");
+    imgPanelBody.addClass("panel-body");
 
-    $("#itemImage").append("<img src=" + item.image_url_thumbnail + " alt=" + item.item_name + ">");
-    $("#itemName").append("<h2>" + item.item_name + "</h2>");
-    $("#currentPrice").append("<h3>" + item.current_price + "</h3>");
-    $("#timeLeft").append("<h4>" + item.end_time + "</h4>");
+    var infoPanel = $("<div>");
+    infoPanel.addClass("panel panel-default");
+    var infoPanelBody = $("<div>");
+    infoPanelBody.addClass("panel-body");
+
+    var image = $("#itemImage");
+    var itemInfo = $("#itemInfo");
+    var itemName = $("#itemName");
+    var itemPrice = $("#currentPrice");
+    var itemTimeLeft = $("#timeLeft");
+
+    var bidContainer = $("<div>");
+    var bidInput = $("<input>");
+    var bidBtn = $("<button>");
+
+    itemName.html("<h2>" + item.item_name + "</h2>");
+    itemPrice.html("<h3>" + item.current_price + "</h3>");
+    itemTimeLeft.html("<h4>" + item.end_time + "</h4>");
+
+    bidBtn.addClass("bid-btn");
+    bidBtn.addClass("btn btn-success");
+    bidBtn.attr('type', 'submit');
+    bidBtn.attr('href', '/api/items/bid/' + item.id);
+    bidBtn.attr('id', item.id);
+    bidBtn.text("Bid now");
+
+    // populate image panel
+    imgPanelBody.append("<img src=" + item.image_url_thumbnail + " alt=" + item.item_name + ">");
+    imgPanel.append(imgPanelBody);
+    image.append(imgPanel);
+
+    bidContainer.append(bidInput)
+        .append(bidBtn);
+
+    infoPanelBody.append(itemName)
+                 .append(itemPrice)
+                 .append(itemTimeLeft)
+                 .append(bidBtn);
+    infoPanel.append(infoPanelBody);
+    itemInfo.append(infoPanel);
   }
 
   // $.get("https://api.ebay.com/buy/browse/v1/item/v1" + item.item_id, function(data){
