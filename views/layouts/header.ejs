@@ -1,0 +1,57 @@
+
+
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar-collapse" aria-expanded="false">
+
+          <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="main-navbar-collapse">
+    <ul class="nav navbar-nav navbar-right">
+    <% if (userName) { %>
+        <li>
+            <a href="/">
+                <%= userName %>
+            </a>
+              <li>
+            <a href="/logout">
+                Log out </a>
+
+        <% } else { %>
+        <li class="dropdown">
+            <a href="/" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle">
+
+                Sign in
+
+
+
+
+        <form name="signin" action="signin" method="post" class="dropdown-menu signin-form">
+            <input type="email" name="email" placeholder="Email address" class="form-control">
+            <input type="password" name="password" placeholder="Password" class="form-control">
+
+            <input type="submit" value="Sign in" class="btn btn-primary">
+        </form>
+           </a>
+
+         <% } { %>
+    <li>
+        <a href="/signup">
+            Sign Up</a>
+    </li>
+
+           <% }  %>
+</ul>
+<% if (flashMessage && flashMessage.length) { %>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="alert alert-danger text-center"><%= flashMessage %>
+            </div>
+        </div>
+    </div>
+<% } %>
+        </div>
+      </div>
+    </nav>

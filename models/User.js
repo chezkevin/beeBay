@@ -14,6 +14,9 @@ module.exports = function(sequelize, DataTypes) {
     email: {
       type: DataTypes.STRING
     },
+    username: {
+      type:DataTypes.STRING
+    },
     // Giving the User Model a password of type STRING
     password: {
       type: DataTypes.STRING

@@ -1,7 +1,12 @@
 {
   "development": {
+<<<<<<< HEAD
     "username": "root", 
     "password": "93dfobdpad",
+=======
+    "username": "root",
+    "password": "Chan312zeke!",
+>>>>>>> origin/alansbranch
     "database": "beebay_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
