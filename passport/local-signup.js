@@ -15,6 +15,7 @@ module.exports = function(salt) {
         username : username
       }
     }).then(function(result){
+      console.log("Part 1")
       if (result){
         return done(null, false, req.flash('flashMessage', 'Sorry! That username is already taken.'));
       }
@@ -24,6 +25,7 @@ module.exports = function(salt) {
             email: req.body.email
           }
         }).then(function(result){
+          console.log("Part 2")
           if (result){
             return done(null, false, req.flash('flashMessage', 'Sorry! That email is already taken.'));
           }
@@ -34,7 +36,7 @@ module.exports = function(salt) {
               email: req.body.email,
               password: bcrypt.hashSync(password, salt)
             });
-            return done(null, User);
+            return done(null);
           }
         })
       }

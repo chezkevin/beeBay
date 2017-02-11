@@ -2,16 +2,18 @@ var db = require("../models");
 const passport      = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
-passport.serializeUser(function(user, done) {
-  done(null, user.id);
+passport.serializeUser(function(result, done) {
+
+  done(null, result);
 });
 
-passport.deserializeUser(function(id, done) {
-  db.Users.findOne({
+passport.deserializeUser(function(result, done) {
+
+  db.User.findOne({
     where:{
-      id: id
+      id: result.id
     }
   }).then(function(result){
-    done(rows[0]);
+    done(false, result);
   })
 });

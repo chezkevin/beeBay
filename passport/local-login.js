@@ -18,10 +18,11 @@ module.exports = function(salt) {
       if (result == undefined){
         return done(null, false, req.flash('flashMessage', 'Invalid login details'));
       }
-      if (bcrypt.hashSync(password, salt) !== rows[0].password) {
+      if (bcrypt.hashSync(password, salt) !== result.password) {
         return done(null, false, req.flash('flashMessage', 'Invalid login details'));
       }
-      return done(null, rows[0]);
+
+      return done(null, result);
     })
   }));
 }

@@ -24,10 +24,9 @@ module.exports = function(app) {
 
   //Receive Signin Form Data
   app.post('/signin',
-    passport.authenticate('local-login', { failureRedirect: '/' }),
-    function(req, res) {
-      res.redirect('/');
-  });
+  passport.authenticate('local-login', { successRedirect: '/main',
+                                   failureRedirect: '/',
+                                   failureFlash: true }));
 
   //Display Signup Form
   app.get('/signup', function(req, res) {
