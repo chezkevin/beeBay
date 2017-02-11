@@ -80,7 +80,7 @@ function createNewPanel(item) {
     bidBtn.addClass("btn btn-success");
 
     // populate item content
-    itemLink.attr('href', '/api/items/' + item.id);
+    itemLink.attr('href', '/view/items/' + item.id);
     itemH3.text(item.item_name);
     itemCat.text(item.category);
     itemCurrentPrice.text("Current bid: " + item.current_price);
