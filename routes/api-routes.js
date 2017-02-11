@@ -18,10 +18,10 @@ module.exports = function(app) {
     });
   });
 
-  app.get("api/items/:itemId", function(req,res){
+  app.get("/api/items/:itemId", function(req,res){
     db.Item.findOne({
       where: {
-        id: req.params.id
+        id: req.params.itemId
       },
       include: [db.User]
     }).then(function(dbItem) {
@@ -29,14 +29,26 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/views/item/:id", function(req, res){
+  app.put("/api/items/bid/:itemId", function(req,res){
+    db.Item.update({
+      current_price: req.body.data.bid},
+      {
+        where:
+        {
+          id: req.params.itemId
+        }
+      }).then(function(dbItem) {
+        res.json(dbItem);
+      });
+    });
 
-db.Item.find({ 
-  where: { 
-    item_id: req.params.id 
-    } 
+  app.get("/views/item/:id", function(req, res){
+db.Item.find({
+  where: {
+    item_id: req.params.id
+    }
   }).on('success', function (result) {
-    
+
     if (result) {
 
       var currentViews = result.views;
