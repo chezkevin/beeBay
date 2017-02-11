@@ -1,0 +1,31 @@
+id: '1',
+item_name: 'Bee Products for Better Health by C. Leigh Broadhurst Paperback Book (English)',
+image_url: 'http://www.ebay.com/itm/Bee-Products-Better-Health-C-Leigh-Broadhurst-Paperback-Book-English-/381753677845',
+image_url_thumbnail'http://thumbs2.ebaystatic.com/m/mFMs2_ewDEaKWMCHFqf_5Ug/140.jpg',
+owner: NULL,
+description: NULL,
+category:'Nonfiction',
+current_price: '10.82',
+condition:'Brand New',
+starting_bid: NULL,
+highest_bid: NULL,
+highest_bid_owner: NULL,
+end_time: '2017-02-26 20:13:49',
+createdAt: '2017-02-05 00:22:10',
+updatedAt: '2017-02-05 00:22:10'
+
+
+Inserted into index.html
+<!-- this div contains item details for one specific item -->
+              <div class="panel-body">
+                  <img class="item-img-thumb" src ="http://thumbs2.ebaystatic.com/m/mFMs2_ewDEaKWMCHFqf_5Ug/140.jpg" />
+                  <span class="item-details">
+                    <a href="/item/1">
+                      <h3 class="item-header">Bee Products for Better Health by C. Leigh Broadhurst Paperback Book (English)</h3>
+                    </a>
+                    <p class="item-desc">Description</p>
+                    <p class="item-current-price">Current price: 10.82</p>
+                    <input placeholder="" id="item=bid" ; style="height: 40px"></textarea>
+                    <button type="submit" class="btn btn-success">Enter bid</button>
+                  </span>
+              </div>

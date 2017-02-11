@@ -15,6 +15,10 @@ module.exports = function(app) {
   app.get("/main", function(req, res) {
     res.sendFile(path.join(__dirname + "/../views/public/index.html"));
   });
+  app.get("/view/items/:itemId?", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../views/public/items.html"));
+  });
+
   // after the user logs in, serve user's unique profile
   app.get("/:userId", function(req, res){
     res.sendFile(path.join(__dirname + "/../public/user.html"));
