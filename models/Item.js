@@ -48,6 +48,9 @@ module.exports = function(sequelize, DataTypes) {
     },
     end_time: {
       type: DataTypes.DATE
+    },
+    views: {
+      type: DataTypes.INTEGER
     }
   },
     // Here we'll pass a second "classMethods" object into the define method

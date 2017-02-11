@@ -1,0 +1,50 @@
+ <!DOCTYPE html>
+ <html lang="en">
+
+ <head>
+     <meta charset="UTF-8">
+     <title>beeBay</title>
+     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+     <!-- <link rel="icon" href="./ssets/img/favicon.ico" type="image/x-icon" /> -->
+     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+     <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+     <script src="https://code.jquery.com/jquery.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+ </head>
+
+<body>
+<div class="container">
+   <h1>BeeBay
+  <img src="assets/images/bee_logo.png"; id="bee_logo">
+  <img src="assets/images/beehive.png"; id="beehive"> </h1>
+  <div class="row">
+    <div class="form-group">
+      <form action="/" class="form" style="text-align: center">
+             <br>
+             <div class="col-xs-6">
+               <input placeholder="Search..." id="search-name" ; style="height: 40px"></textarea>
+               <button type="submit" class="btn btn-success"> Search</button>
+             </div>
+      </form>
+     </div>
+   </div>
+
+   <div class="row">
+      <div class="col-xs-6" id="itemImage"></div>
+
+      <div class="col-xs-6">
+        <div class="row" id="itemName"></div>
+        <div class="row" id="currentPrice"></div>
+        <div class="row" id="timeLeft"></div>
+        <div class="row">
+          <button type="button" class="btn btn-default btn-lg" id="bidButton">Bid Now!</button>
+        </div>
+      </div>
+   </div>
+</div>
+  <script type="text/javascript" src="assets/javascript/item.js"></script>
+
+</body>
+
+ </html>
