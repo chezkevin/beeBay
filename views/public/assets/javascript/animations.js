@@ -29,12 +29,3 @@ $("input").click(function(e){
 })
 });
 
-
-
-/*--to get Bee to float next to form input
-//on focus scrollY position input 	
-set bee to scrollY position 
-
-
-li input onfocus 
-animate from dismissing one and enabling another */
