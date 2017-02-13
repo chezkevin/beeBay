@@ -1,7 +1,7 @@
 var request = require('request');
 var db = require("../models");
-var moment = require("moment");
-
+/*var moment = require("moment");
+*/
 // console.log(moment().format());
 
 //Constructing eBay API call

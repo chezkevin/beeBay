@@ -4,43 +4,58 @@
     <title></title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="public/assets/css/loginStyle.css" rel="stylesheet">
+   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+     <script src="public/assets/javascript/animations.js"> </script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   </head>
   <body>
 <% include ./layouts/header %>
+
 <div class="container-fluid page-wrap">
+  
+  <img src="/images/bee_logo.png"; id="bee_logo"; class="animated shake">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
-      <h1 class="Title text-center"></h1>
+  
       <div class="row">
         <div class="col-md-6 col-md-offset-3 text-center">
       <div class="Signup-Form">
                  <h1>BeeBay
-       <img src="/images/bee_logo.png"; id="bee_logo">
        </h1>
-       <h3> See what all the BUZZ is about!</h3>
+       
+       <h3> See what all the BUZZ is about! </h3>
         <br>
 <!--
         <h3 class="Title!"><%= message %></h3> -->
 
-<form id="signup" name="signup" action="signup" method="post">
-    <input type="text" name="name" placeholder="Name" class="form-control">
-    <input type="text" name="username" placeholder="Username" class="form-control">
-    <input type="email" name="email" placeholder="Email address" class="form-control">
-    <input type="password" name="password" placeholder="Password" class="form-control">
-    <input type="submit" value="Sign up" class="btn btn-primary form-control" style="width: 40%">
+<form id="signup" name="signup" action="signup" method="post" class="animated flipInY">
+
+    <input type="text" name="name" placeholder="Name" class="form-control" id="nameBox">
+
+    <input type="text" name="username" placeholder="Username" class="form-control" id="userNameBox">
+
+    <input type="email" name="email" placeholder="Email address" class="form-control" id="nameBox">
+
+    <input type="password" name="password" placeholder="Password" class="form-control" id="nameBox">
+
+    <input type="submit" value="Sign up" class="btn btn-primary" style="width: 40%" id="signUpSubmit">
+
+
 </form>
 <br>
     <a href="/">
-    <input type="submit" value="Already Have An Account?" class="btn btn-danger">
+    <input type="submit" value="Already Have An Account?" class="btn btn-danger animated flipInY" id="AlreadySubmit">
     </a>
+  
 
 
-</div>
-</div>
-</div>
+
 </div>
 </div>
 </div>
 
+</div>
+</div>
+</div>
 </body>
 </html>

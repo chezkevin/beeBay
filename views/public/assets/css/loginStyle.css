@@ -1,9 +1,4 @@
-* {
-  margin: 0;
-}
-html, body {
-  height: 100%;
-}
+
 .page-wrap {
   min-height: 100%;
   /* equal to footer height */
@@ -27,17 +22,21 @@ h3 {
  }
  
 #bee_logo {
+  top: 5%;
+  left: 57%;
+   z-index: +1; 
   max-height: 150px;
   max-width: 150px;
+  position: absolute;
+
+
 }
 
-footer, .page-wrap:after {
-  height: 142px;
+#relativeArea{
+  position: relative;
+  padding-right: 50px;
 }
-footer {
-  bach1{
-  font-family: 'Pacifico', cursive;
-  font-size: 75px;
+
 }ground-color: #222;
   border: 1px solid #080808;
   color: #FFF;
@@ -47,7 +46,7 @@ footer {
   border-radius: 0px;
 }
 .signin-form {
-  width: 300px;
+  width: 20px;
   padding: 25px;
 }
 input[type="text"],
@@ -56,8 +55,13 @@ input[type="password"] {
   margin-bottom: 25px;
 }
 
+.form-control{
+  margin-left: 15%;
+  width: 70%;
+}
+
 body {
-  width: 99%;
-  height: 900px;
+  width: 100%;
+
   background-color: #ffcc66;
 }
