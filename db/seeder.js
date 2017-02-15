@@ -10,7 +10,7 @@ url += "&GLOBAL-ID=EBAY-US";
 url += "&RESPONSE-DATA-FORMAT=JSON";
 url += "&REST-PAYLOAD";
 url += "&keywords=bee%20products"; //Keyword search
-url += "&paginationInput.entriesPerPage=15"; //number of products returned
+url += "&paginationInput.entriesPerPage=10"; //number of products returned
 
 
 request(url, function (error, response, body) {
@@ -24,7 +24,7 @@ request(url, function (error, response, body) {
         item_id: ebayJSON.item[i].itemId[0],
         item_name: ebayJSON.item[i].title[0],
         image_url_thumbnail: ebayJSON.item[i].galleryURL[0],
-        end_time: ebayJSON.item[0].sellingStatus[0].timeLeft[0],
+        // end_time: ebayJSON.item[0].sellingStatus[0].timeLeft[0],
         category: ebayJSON.item[i].primaryCategory[0].categoryName[0],
         current_price: ebayJSON.item[i].sellingStatus[0].currentPrice[0].__value__,
         condition: ebayJSON.item[i].condition[0].conditionDisplayName[0] || null

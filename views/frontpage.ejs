@@ -2,43 +2,42 @@
 <html>
   <head>
     <title></title>
-    <link href="" rel="stylesheet">
-    <link href="public/assets/css/loginStyle.css" rel="stylesheet">
-     <!-- <script src="/javascript/app.js"> </script> -->
-    <script src="https://code.jquery.com/jquery-3.1.1.js"
-  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
-  crossorigin="anonymous"> </script>
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"> </script> -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
     crossorigin="anonymous">
+    <link href="" rel="stylesheet">
+    <link href="public/assets/css/loginStyle.css" rel="stylesheet">
+      <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"> </script> -->
+
   </head>
   <body>
 
 <% include ./layouts/header %>
 
 <div class="container-fluid page-wrap">
+ <img src="/public/assets/images/bee_logo.png"; id="bee_logo" class="animated shake">
   <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-      <h1 class="Title text-center"></h1>
-      <div class="row">
         <div class="col-md-6 col-md-offset-3 text-center">
              <h1>BeeBay
-       <img src="/public/assets/images/bee_logo.png"; id="bee_logo">
        </h1>
+            <h3> See what all the BUZZ is about! </h3>
         <br>
-            <form name="signin" action="signin" method="post"99>
+            <form name="signin" action="signin" method="post" class="animated flipInY">
             <input type="email" name="email" placeholder="Email address" class="form-control">
             <input type="password" name="password" placeholder="Password" class="form-control">
 
-            <input type="submit" value="Sign in" class="btn btn-primary" style="width: 40%">
+            <input type="submit" value="Sign in" class="btn btn-primary" style="width: 30%">
             <br>
             <br>
 
         </form>
             <a href="/signup">
-             <input type="submit" value="Sign Up" class="btn btn-danger" style="width: 40%">
+             <input type="submit" value="Sign Up" class="btn btn-danger animated flipInY"" style="width: 30%">
              </a>
+
         </div>
       </div>
     </div>
@@ -46,5 +45,10 @@
 </div>
 
 
+
+  <script src="https://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"> </script>
+  <script src="public/assets/javascript/animations.js"> </script>
 </body>
 </html>

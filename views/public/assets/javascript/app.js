@@ -83,7 +83,7 @@ function createNewPanel(item) {
     itemLink.attr('href', '/view/items/' + item.id);
     itemH3.text(item.item_name);
     itemCat.text(item.category);
-    itemCurrentPrice.text("Current bid: " + item.current_price);
+    itemCurrentPrice.text("Current bid: $" + item.current_price);
     itemEndTime.text("End time: " + item.end_time);
     itemLink.append(itemH3);
     bidBtn.attr('type', 'submit');

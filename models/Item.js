@@ -1,10 +1,10 @@
 module.exports = function(sequelize, DataTypes) {
   var Item = sequelize.define("Item", {
-    // id: {
-    //   type: DataTypes.INTEGER,
-    //   autoIncrement: true,
-    //   primaryKey: true
-    // },
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true
+    },
     // Giving the Item model a name of type STRING
     item_id: {
       type: DataTypes.BIGINT
@@ -42,9 +42,9 @@ module.exports = function(sequelize, DataTypes) {
     highest_bid_owner: {
       type: DataTypes.STRING
     },
-    end_time: {
-      type: DataTypes.DATE
-    },
+    // end_time: {
+    //   type: DataTypes.DATE
+    // },
     views: {
       type: DataTypes.INTEGER
     }
