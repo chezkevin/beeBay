@@ -15,8 +15,10 @@
 
 <body>
 <div class="container">
+  <a href="/main" id="home-link">
    <h1>BeeBay
   <img src="../../public/assets/images/bee_logo.png"; id="bee_logo">
+  </a>
   <img src="../../public/assets/images/beehive.png"; id="beehive"> </h1>
   <div class="row">
     <!-- unused search button
@@ -33,15 +35,12 @@
    </div>
 
    <div class="row">
-      <div class="col-xs-6" id="itemImage"></div>
+      <div class="col-xs-4" id="itemImage"></div>
 
-      <div class="col-xs-6">
-        <div class="row" id="itemName"></div>
-        <div class="row" id="currentPrice"></div>
-        <div class="row" id="timeLeft"></div>
-        <div class="row">
-          <button type="button" class="btn btn-default btn-lg" id="bidButton">Bid Now!</button>
-        </div>
+      <div class="col-xs-8" id="itemInfo">
+        <div id="itemName"></div>
+        <div id="currentPrice"></div>
+        <div id="timeLeft"></div>
       </div>
    </div>
 </div>

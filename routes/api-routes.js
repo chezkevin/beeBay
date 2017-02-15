@@ -20,7 +20,6 @@ module.exports = function(app) {
 
     // returns info from sequelize database for one item
     app.get("/api/items/:itemId", function(req, res) {
-        console.log("req.body: " + req.params.itemId);
         db.Item.findOne({
             where: {
                 id: req.params.itemId
@@ -29,6 +28,20 @@ module.exports = function(app) {
         }).then(function(dbItem) {
             res.json(dbItem);
         });
+    });
+
+    // bid on an item
+    app.post("/api/items/bid/:itemId", function(req,res){
+    db.Item.update({
+      current_price: req.body.bid},
+      {
+        where:
+        {
+          id: req.params.itemId
+        }
+      }).then(function(dbItem) {
+        res.json(dbItem);
+      });
     });
 
     app.get("/views/item/:id", function(req, res) {
